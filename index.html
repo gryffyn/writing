@@ -1,8 +1,8 @@
-<!-- 
-#    
+<!--
+#
 # Writing is an in-browser text editor, supporting LaTeX (MathJax) and Markdown, designed to be lightweight and, unlike some other similar solutions, 
 #           fast to display (no delay when writing, no flickering when writing math), as close as possible to the math.stackexchange.com editor.
-# 
+#
 # author:   Joseph Ernest (twitter: @JosephErnest)
 # url:      https://github.com/josephernest/writing
 # license:  MIT license
@@ -17,7 +17,7 @@
 <html class="fixedheight texroman">
 <head>
 <link rel="icon" href="favicon.ico" />
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />  
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Writing</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style type="text/css">
@@ -244,6 +244,22 @@ $(document).on('keydown', function(e) {
         e.preventDefault();
         return false;*/
     }
+    else if (e.keyCode == 83 && (e.ctrlKey || e.metaKey) && e.shiftKey) {    // CTRL + SHIFT + S
+        var blob = new Blob([converter.makeHtml($('#wmd-input').val())], {type: 'text'});     // https://stackoverflow.com/a/33542499/1422096
+        if (window.navigator.msSaveOrOpenBlob) {
+            window.navigator.msSaveBlob(blob, 'newfile.html');
+        }
+        else {
+            var elem = window.document.createElement('a');
+            elem.href = window.URL.createObjectURL(blob);
+            elem.download = 'newfile.html';        
+            document.body.appendChild(elem);
+            elem.click();        
+            document.body.removeChild(elem);
+        }
+        e.preventDefault();
+        return false;
+    }
     else if (e.keyCode == 83 && (e.ctrlKey || e.metaKey)) {    // CTRL + S
         var blob = new Blob([$('#wmd-input').val()], {type: 'text'});     // https://stackoverflow.com/a/33542499/1422096
         if (window.navigator.msSaveOrOpenBlob) {
@@ -260,6 +276,7 @@ $(document).on('keydown', function(e) {
         e.preventDefault();
         return false;
     }
+   
     else if (e.keyCode == 68 && (e.ctrlKey || e.metaKey) && !e.shiftKey) {    // CTRL + D
         mode += 1; if (mode == 3) mode = 0;
         if (mode == 1) {
@@ -327,8 +344,6 @@ togglemathjax(latexenabled);
 toggledarkmode(darkmodeenabled);
 editor.run();
 </script>
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2312083-14"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-2312083-14');</script>
     
 </body>
 </html>
