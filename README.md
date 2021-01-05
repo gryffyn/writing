@@ -47,7 +47,7 @@ About
 ----
 Author: Joseph Ernest ([@JosephErnest](https://twitter.com/JosephErnest))
 
-Other projects: [BigPicture](http://bigpicture.bi), [bigpicture.js](https://github.com/josephernest/bigpicture.js), [AReallyBigPage](https://github.com/josephernest/AReallyBigPage), [SamplerBox](http://www.samplerbox.org), [Void](http://www.thisisvoid.org), [TalkTalkTalk](https://github.com/josephernest/TalkTalkTalk), [YellowNoiseAudio](http://www.yellownoiseaudio.com), etc.
+Other projects: [BigPicture](http://bigpicture.bi), [bigpicture.js](https://github.com/josephernest/bigpicture.js), [AReallyBigPage](https://github.com/josephernest/AReallyBigPage), [SamplerBox](http://www.samplerbox.org), [Void](https://github.com/josephernest/void), [TalkTalkTalk](https://github.com/josephernest/TalkTalkTalk), [sdfgh](https://github.com/josephernest/sdfgh), [RaspFIP](https://github.com/josephernest/RaspFIP/), [Yopp](https://github.com/josephernest/Yopp), etc.
 
 License
 ----
@@ -58,3 +58,5 @@ Dependencies
 **Writing** uses [Pagedown](https://code.google.com/archive/p/pagedown/), [Pagedown Extra](https://github.com/jmcmanus/pagedown-extra), [MathJax](https://www.mathjax.org/), StackOverflow's [editor code](https://gist.github.com/gdalgas/a652bce3a173ddc59f66), and the [Computer Modern](http://cm-unicode.sourceforge.net/) font.
 
 *Note: Some of these libraries have been slightly modified (a few lines of code), to make it work all together, that's why they are included in this package.*
+
+![](https://gget.it/pixel/writing.png)
